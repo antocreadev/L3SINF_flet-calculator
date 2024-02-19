@@ -1,4 +1,4 @@
-import flet
+import flet 
 from flet import (
     Column,
     Container,
@@ -9,6 +9,7 @@ from flet import (
     UserControl,
     border_radius,
     colors,
+    MainAxisAlignment
 )
 
 
@@ -18,11 +19,15 @@ class CalculatorApp(UserControl):
 
         return Container(
             border_radius=border_radius.all(20),
+            alignment=flet.alignment.center,
+            
             padding=20,
             content=Column(
                 controls=[
-                    Row(controls=[self.result], alignment="end"),
+                    Row(controls=[self.result], alignment="end",height=50, width=500,),
                     Row(
+                        height=50,
+                        width=500,
                         controls=[
                             ElevatedButton(
                                 text="AC",
@@ -59,6 +64,8 @@ class CalculatorApp(UserControl):
                         ],
                     ),
                     Row(
+                        height=50,
+                        width=500,
                         controls=[
                             ElevatedButton(
                                 text="7",
@@ -95,6 +102,8 @@ class CalculatorApp(UserControl):
                         ]
                     ),
                     Row(
+                        height=50,
+                        width=500,
                         controls=[
                             ElevatedButton(
                                 text="4",
@@ -131,6 +140,8 @@ class CalculatorApp(UserControl):
                         ]
                     ),
                     Row(
+                        height=50,
+                        width=500,
                         controls=[
                             ElevatedButton(
                                 text="1",
@@ -167,6 +178,8 @@ class CalculatorApp(UserControl):
                         ]
                     ),
                     Row(
+                        height=50,
+                        width=500,
                         controls=[
                             ElevatedButton(
                                 text="0",
@@ -234,6 +247,9 @@ class CalculatorApp(UserControl):
 
 def main(page: Page):
     page.title = "Calculator App"
+    page.window_min_width = 500
+    page.window_min_height = 500
+    page.vertical_alignment = MainAxisAlignment.CENTER
     calc = CalculatorApp()
     page.add(calc)
 
