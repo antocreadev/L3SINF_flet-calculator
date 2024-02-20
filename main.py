@@ -218,27 +218,23 @@ class CalculatorApp(UserControl):
                 self.result.value = data
             else:
                 self.result.value += data
-        
-        if data in ["+", "-", "*", "/", "%"]:
+        elif data in ["+", "-", "*", "/", "%"]:
             self.result.value += data
 
-        if data == "AC":
+        elif data == "AC":
             self.result.value = "0"
 
-        if data == "+/-":
+        elif data == "+/-":
             if self.result.value.startswith("-"):
                 self.result.value = self.result.value[1:]
             else:
                 self.result.value = "-" + self.result.value
-
-        if data == "=":
+        else :
             try:
                 self
                 self.result.value = str(eval(self.result.value))
             except:
                 self.result.value = "Error"
-                
-
         self.update()
 
 
