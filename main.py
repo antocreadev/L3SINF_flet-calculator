@@ -12,7 +12,6 @@ from flet import (
     MainAxisAlignment
 )
 
-
 class CalculatorApp(UserControl):
     def build(self):
         self.result = Text(value="0", color=colors.WHITE, size=20)
@@ -237,10 +236,6 @@ class CalculatorApp(UserControl):
                 self.result.value = "Error"
         self.update()
 
-
-
-
-
 def main(page: Page):
     page.title = "Calculator App"
     page.window_min_width = 500
@@ -248,6 +243,5 @@ def main(page: Page):
     page.vertical_alignment = MainAxisAlignment.CENTER
     calc = CalculatorApp()
     page.add(calc)
-
 
 flet.app(target=main)
